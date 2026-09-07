@@ -32,7 +32,7 @@ level1_x_min: 0.0
 # 掉头状态一级最大检测距离，网页仍然修改这个参数
 level1_x_max: 1.7
 # 正常行驶或尚未收到有效/rrcmc_ii时的一级最大检测距离
-level1_normal_x_max: 1.9
+level1_normal_x_max: 1.7
 # level2_x_min等于level2_x_max时，关闭二级避障区域
 level2_x_min: 0.0
 level2_x_max: 0.0
