@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>stop_obstacle_cpp</name>
+  <version>0.0.0</version>
+  <description>The stop_obstacle_cpp package</description>
+
+  <maintainer email="shibo@todo.todo">shibo</maintainer>
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- ROS编译依赖 -->
+  <build_depend>nav_msgs</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>visualization_msgs</build_depend>
+  <build_depend>rrcmc_msgs</build_depend>
+
+  <!-- 其他包编译依赖本包时使用 -->
+  <build_export_depend>nav_msgs</build_export_depend>
+  <build_export_depend>roscpp</build_export_depend>
+  <build_export_depend>sensor_msgs</build_export_depend>
+  <build_export_depend>std_msgs</build_export_depend>
+  <build_export_depend>visualization_msgs</build_export_depend>
+  <build_export_depend>rrcmc_msgs</build_export_depend>
+
+  <!-- 运行依赖 -->
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>visualization_msgs</exec_depend>
+  <exec_depend>rrcmc_msgs</exec_depend>
+
+  <!-- YAML配置文件支持 -->
+  <build_depend>yaml-cpp</build_depend>
+  <build_export_depend>yaml-cpp</build_export_depend>
+  <exec_depend>yaml-cpp</exec_depend>
+
+  <export>
+  </export>
+</package>

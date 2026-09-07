@@ -1,0 +1,71 @@
+# 96线多线雷达普通避障节点配置：points_obstacle_96.yaml
+
+# ================= 基本开关 =================
+# enable=true：96线障碍检测正常输出0/1/2
+# enable=false：关闭96线检测，/srs_obstacle_m_96持续输出0
+enable: true
+reload_yaml: true
+reload_interval: 1.0
+
+# ================= ROS参数同步 =================
+sync_rosparam: true
+rosparam_sync_interval: 0.2
+
+# ================= Service配置 =================
+# 服务名称运行中修改后需要重启节点
+srv_name: /srv_cmd01
+# 以后命令编号变化只修改这里，不需要重新编译
+srv_cmd_code: 83001
+
+# ================= 话题配置 =================
+# 话题名建议启动前配置，运行中修改后需要重启节点
+input_topic: /patchwork_refine/no_ground
+output_topic: /srs_obstacle_m_96
+status_topic: /srs_obstacle_m_96_status
+roi_marker_topic: /srs_obstacle_m_96_roi_markers
+voxel_cloud_topic: /srs_obstacle_m_96_voxel_cloud
+ignore_marker_topic: /srs_obstacle_m_96_ignore_markers
+
+# ================= 避障距离 =================
+# x：前方距离
+level1_x_min: 0.0
+# 掉头状态一级最大检测距离，网页仍然修改这个参数
+level1_x_max: 1.7
+# 正常行驶或尚未收到有效/rrcmc_ii时的一级最大检测距离
+level1_normal_x_max: 1.9
+# level2_x_min等于level2_x_max时，关闭二级避障区域
+level2_x_min: 0.0
+level2_x_max: 0.0
+
+# ================= 检测范围 =================
+# y：左正右负；z：上正下负
+# 牛舍外右侧边界
+y_min: -0.6
+# 牛舍内右侧边界（/rrcmc_status field0[73] 为 1 时使用）
+feeding_lane_y_min: -0.3
+y_max: 0.8
+z_min: -1.4
+z_max: 0.1
+
+# ================= voxel 与报警阈值 =================
+voxel_size: 0.05
+level1_voxel_threshold: 20
+level2_voxel_threshold: 20
+
+# ================= 一级避障保持时间 =================
+# 掉头状态保持时间，网页仍然修改这个参数
+level1_delay: 5.0
+# 正常行驶或尚未收到有效/rrcmc_ii时的保持时间
+level1_normal_delay: 5.0
+
+# ================= 固定推板/挡板忽略区域 =================
+ignore_push_plate: true
+push_plate_x_min: 0.0
+push_plate_x_max: 1.35
+push_plate_y_min: -1.17
+push_plate_y_max: 0.8
+push_plate_z_min: -1.80
+push_plate_z_max: 0.0
+
+# ================= RViz 显示 =================
+marker_lifetime: 0.3

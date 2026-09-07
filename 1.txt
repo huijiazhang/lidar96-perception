@@ -1,0 +1,39 @@
+
+启动96线雷达驱动：
+source /home/casp/robosence_airy/devel/setup.bash && roslaunch rslidar_sdk_airy start.launch
+
+
+
+
+重力对齐：
+cd /home/casp/fence_ws/gravity_align && ./gravity_align_yaml_18 _config_file:=default.yaml
+
+重力对齐后的点云是：gravity_aligned/points
+坐标系是：aligned_lidar
+
+
+
+
+标定：
+python2 dual_lidar_icp_fusion.py 
+坐标系是:rslidar
+
+
+
+/home/casp/fence_obstacle_cpp_ws/src/stop_obstacle_cpp/src
+
+
+rslidar_T_gravity.csv
+
+
+
+auto.sh里面添加的是
+'sleep 15; export RUN_AFTER_BASHRC="source /home/casp/robosence_airy/devel/setup.bash && roslaunch rslidar_sdk_airy start.launch"'
+'sleep 15; export RUN_AFTER_BASHRC="cd /home/casp/fence_ws/gravity_align && ./gravity_align_yaml_18 _config_file:=default.yaml"'
+
+
+
+'sleep 30; export RUN_AFTER_BASHRC="unset RUN_AFTER_BASHRC; cd /home/casp/fence_obstacle_cpp_ws/src/stop_obstacle_cpp/src && ./run_pipeline.sh"'
+
+
+搜索：ground_filter_pusher

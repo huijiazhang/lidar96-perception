@@ -1,0 +1,28 @@
+# ROS / Catkin generated directories
+build/
+devel/
+install/
+log/
+logs/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# ROS bag files
+*.bag
+*.bag.active
+
+# IDE
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.log
+*~
+
+# Core dumps
+core
+core.*
